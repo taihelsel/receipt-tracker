@@ -16,8 +16,9 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'));
 //Controllers
 app.get('/', (req, res) => {
-    res.render("layout");
+    res.render("Home/addReceipt");
 });
+app.use("/receipt", require("./controllers/receipt"));
 //Exports
 const server = app.listen(process.env.PORT || 3000);
 module.exports = server;
